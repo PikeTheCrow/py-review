@@ -1,5 +1,7 @@
 #! usr/bin/python3
 
+# MOVE MAJORITY OF CODE INTO SCRAPPER CLASS
+
 import re
 import requests as r
 import dhtmlparser as d
