@@ -26,11 +26,10 @@ for article in articles:
     heading = re.search(r'">(.*?)</a>', str(article))
     summary = re.search( r'</span>(.*?)<a', str(article) )
     comments = re.search( r'data-lf-article-id="(.*?)</span>', str(article) )
-    if article:
+    if comments:
         print (heading.group(0))
         print (summary.group(0))
         print (link_to.group(0))
-        if comments:
-            print (comments.group(0))
+        print (comments.group(0))
 
 print ("all good")
