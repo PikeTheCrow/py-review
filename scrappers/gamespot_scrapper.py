@@ -18,4 +18,10 @@ for article in articles:
     if titles:
         print (titles)
         print (content)
-        print (link_to)
+        if link_to:
+            link_to_comments = r.get("http://www.gamespot.com" + link_to[0]).content
+            dom_link = d.parseString(link_to_comments)
+            find_comment = dom_link.find("div", {"class": "text-center text-emphasis text-color--light has-rhythm--min"})
+            for comment in find_comment:
+                amount = re.findall( r'<span class="text-color--tertiary text-bold">(.*?)<', str(comment) )
+                print (amount)
